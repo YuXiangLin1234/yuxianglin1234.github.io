@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light;
+  --text: #222c3a;
+  --muted: #657080;
+  --link: #255aa6;
+  --line: #e5e5e5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+  font-size: 112.5%;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body { margin: 0; background: #fff; color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.page { width: 60%; margin: 0 auto; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 5px; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0 0; }
+nav { display: flex; gap: 24px; font-size: .875rem; }
+nav a { color: var(--muted); padding: 5px 0; }
+.bio { padding-top: 36px; }
+.bio-heading { display: grid; grid-template-columns: minmax(0, 1fr) 164px; align-items: center; gap: 28px; margin-bottom: 24px; }
+h1 { font-size: 2.5rem; line-height: 1.2; letter-spacing: -1px; font-weight: 700; margin: 0 0 12px; }
+.chinese-name { color: var(--muted); font-size: 1.125rem; font-weight: 400; letter-spacing: .16em; line-height: 1.5; margin: 0; }
+.bio > p { margin: 0 0 14px; }
+.bio > p strong { color: var(--text); font-weight: 650; }
+.portrait { display: block; width: 164px; max-width: 100%; height: auto; border-radius: 5px; }
+strong { font-weight: 600; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 20px; font-size: .9375rem; font-weight: 550; }
+.publications { margin-top: 42px; }
+h2 { font-size: 1.5rem; line-height: 1.4; font-weight: 650; margin: 0 0 25px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.paper { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 20px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+.paper:first-child { padding-top: 0; }
+.papers { margin-bottom: 22px; }
+@supports (grid-template-columns: subgrid) {
+  .papers { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 20px; }
+  .paper { grid-column: 1 / -1; grid-template-columns: subgrid; }
+}
+.paper h3 { font-size: 1.1875rem; line-height: 1.5; font-weight: 650; margin: 0 0 10px; }
+.paper h3 a { color: var(--text); }
+.paper h3 a:hover { color: var(--link); }
+.paper-body, .bio-identity { min-width: 0; overflow-wrap: break-word; }
+.paper-meta { display: flex; flex-direction: column; gap: 7px; padding-top: 3px; }
+.paper .venue { color: var(--link); font-size: 1rem; font-weight: 700; line-height: 1.45; white-space: nowrap; }
+.paper .year { color: var(--muted); font-size: .875rem; line-height: 1.4; }
+.authors { color: var(--muted); font-size: .875rem; line-height: 1.65; margin: 0 0 12px; }
+.authors strong { color: var(--text); font-weight: 700; }
+.paper-summary { color: #424f61; font-size: .9375rem; line-height: 1.7; margin: 0 0 13px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: .875rem; }
+.contribution { color: var(--muted); font-size: .8125rem; margin: 0 0 12px; }
+.all-publications { font-size: .875rem; margin: 0; }
+footer { color: var(--muted); font-size: .8125rem; border-top: 1px solid var(--line); margin-top: 44px; padding: 18px 0 28px; }
+.skip { position: absolute; left: 16px; top: -100px; padding: 8px 12px; background: #fff; }
+.skip:focus { top: 10px; }
+@media (max-width: 900px) {
+  .page { width: 100%; padding-inline: 24px; }
+}
+@media (max-width: 700px) {
+  .papers { display: block; }
+  .paper { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 23px 0; }
+  .paper-meta { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 12px; padding-top: 0; }
+}
+@media (max-width: 520px) {
+  .page { padding-inline: 18px; }
+  .header { padding-top: 20px; }
+  .bio { padding-top: 28px; }
+  .bio-heading { grid-template-columns: minmax(0, 1fr) 112px; gap: 18px; margin-bottom: 22px; }
+  h1 { font-size: 2rem; letter-spacing: -.7px; }
+  .portrait { width: 112px; }
+  .paper h3 { font-size: 1.125rem; }
+  .publications { margin-top: 32px; }
+  .paper .year { font-family: inherit; font-size: .875rem; }
+}
+
+@media (max-width: 380px) {
+  .bio-heading { grid-template-columns: minmax(0, 1fr) 88px; gap: 14px; }
+  h1 { font-size: 1.75rem; letter-spacing: -.6px; }
+  .portrait { width: 88px; }
+}
